@@ -28,6 +28,18 @@ impl Summary for Tweet {
     }
 }
 
+pub fn largest<T: PartialOrd>(list: &[T]) -> &T {
+    let mut largest = &list[0];
+
+    for t in list.iter() {
+        if t > largest {
+            largest = t;
+        }
+    }
+
+    largest
+}
+
 // fn returns_summarizable(switch: bool) -> impl Summary {
 //     if switch {
 //         NewsArticle {
